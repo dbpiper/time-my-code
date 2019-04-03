@@ -1,39 +1,7 @@
 import moment from 'moment';
-
-export interface FormattedDuration {
-  milliseconds: number;
-  seconds: number;
-  minutes: number;
-}
+import FormattedDuration from './formatted-duration';
 
 class Timer {
-  private static _makeFormattedDuration = (
-    duration: moment.Duration,
-  ): FormattedDuration => {
-    const locale = 'en-US';
-    const millisecondsInSecond = 1000;
-    const formattingOptions: Intl.NumberFormatOptions = {
-      maximumFractionDigits: 2,
-    };
-    const milliseconds = Number(
-      duration.milliseconds().toLocaleString(locale, formattingOptions),
-    );
-    const seconds = Number(
-      (duration.seconds() + milliseconds / millisecondsInSecond).toLocaleString(
-        locale,
-        formattingOptions,
-      ),
-    );
-    const minutes = Number(
-      duration.minutes().toLocaleString(locale, formattingOptions),
-    );
-
-    return {
-      milliseconds,
-      seconds,
-      minutes,
-    };
-  };
   private _startTime!: moment.Moment;
   private _stopTime!: moment.Moment;
 
@@ -50,9 +18,9 @@ class Timer {
    *
    * @memberof Timer
    */
-  public start() {
+  public start = () => {
     this._startTime = moment();
-  }
+  };
 
   /**
    * Stops the timer, and returns how much time passed.
@@ -60,15 +28,14 @@ class Timer {
    * @returns The amounted of time taken as a FormattedDuration object
    * @memberof Timer
    */
-  public stop() {
+  public stop = () => {
     this._stopTime = moment();
 
-    const durationMs = this._stopTime.diff(this._startTime);
-    const timeTaken = moment.duration(durationMs, 'milliseconds');
-    const formattedDuration = Timer._makeFormattedDuration(timeTaken);
+    // get the amount of time that passed, in milliseconds
+    const duration = this._stopTime.diff(this._startTime);
 
-    return formattedDuration;
-  }
+    return new FormattedDuration(duration);
+  };
 }
 
 export default Timer;

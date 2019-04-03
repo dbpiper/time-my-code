@@ -35,6 +35,9 @@
   "directories": {
     "example": "example"
   },
+  "files": [
+    "lib"
+  ],
   "homepage": "https://github.com/dbpiper/module-starter-kit#readme",
   "husky": {
     "hooks": {
