@@ -1,0 +1,21 @@
+os: linux
+dist: xenial
+language: node_js
+env: NODE_ENV=development
+node_js:
+  - lts/*
+cache:
+  directories:
+    - '$HOME/.npm'
+install:
+  - npm ci
+  - npm link
+  - npm link gulp-errorable
+script: npm run verifyCi
+notifications:
+  slack:
+    rooms:
+      - secure: j3KUFPhSriifNRPXKVPkiWhA3HeX3GnDWFxcqWlwSfx7tatsV37jzuEF2BY4eRZA7or7tVEnTXizwtJ45IZUIe4me2WQ06zFMUhwPqDJhUSDV+D8qajOqorFopttSVSDdX89LKzDVHmH6WPWxfXRDqu1Ir/AtxnjZ3ebLLMqEAr8hLMC4TtEAmVK558shwcGkDme3J6oAOWI5FdmtJ+s0EjkennioKVt4GYOSLeL7PMx0wwGYNNy/PpeXdAdfs9jaPC2/6sshnMdNCgKipBlnoSp4M9GLgBen887iHxkUMmjV4WYL7+PAABRz91+pXM8OgDO5KufLHpiZ6M4XkRSTqRiGdRk16CYWAvTTkeLZy9mGSX6VXsqnwuVBZIPDuiSzRdBWKBefowhbgEzr4nVKJ/EPEleg8BpG5KNAXMcf0YjI5mjcTDolQfRwYxIMjufYWZXAdfqrh6pkLq3JZ8dybxM8J4hluf1gaPeAmJNi85UrIgB4BJGPX7kXLKs2QsLeKfjqzGey4L7ATzzGpSenR1Msy+NXFEE0yYaTiKNc88aWUHxKl1z9ObRfdXn9flkOlKRK3BH4SmHjfXNKjb79mB6WTnChiGG5t+YorrVD2LXnWbodN6x98mPJB/u8IfmAcTAz+SKN7dTDvzEwXGAmcxj2CKL1mBeoBp7ohTb7Ww=
+    on_success: always
+    on_failure: always
+    on_pull_requests: true
