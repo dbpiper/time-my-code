@@ -38,4 +38,6 @@ class Timer {
   };
 }
 
+export { FormattedDuration };
+
 export default Timer;

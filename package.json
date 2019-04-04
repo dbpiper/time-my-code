@@ -49,10 +49,13 @@
     }
   },
   "keywords": [
-    "starter-kit",
-    "modules",
-    "npm",
-    "bootstrap"
+    "timer",
+    "code",
+    "timing-code",
+    "performance",
+    "speed",
+    "measurement",
+    "time"
   ],
   "license": "MIT",
   "main": "lib/timer.js",
