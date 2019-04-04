@@ -4,6 +4,8 @@
     "url": "https://github.com/dbpiper/module-starter-kit/issues"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.123",
+    "lodash": "^4.17.11",
     "moment": "^2.24.0"
   },
   "description": "Simple module to time your code JavaScript or TypeScript code, to see how long it took to run.",
