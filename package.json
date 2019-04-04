@@ -1,7 +1,7 @@
 {
   "author": "David Piper <david.piper@mailfence.com>",
   "bugs": {
-    "url": "https://github.com/dbpiper/module-starter-kit/issues"
+    "url": "https://github.com/dbpiper/timer/issues"
   },
   "dependencies": {
     "@types/lodash": "^4.14.123",
@@ -40,7 +40,7 @@
   "files": [
     "lib"
   ],
-  "homepage": "https://github.com/dbpiper/module-starter-kit#readme",
+  "homepage": "https://github.com/dbpiper/timer#readme",
   "husky": {
     "hooks": {
       "commit-msg": "npx commitlint -E HUSKY_GIT_PARAMS",
@@ -62,7 +62,7 @@
   "name": "@dbpiper/timer",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dbpiper/module-starter-kit.git"
+    "url": "git+https://github.com/dbpiper/timer.git"
   },
   "scripts": {
     "build": "npx gulp build",
